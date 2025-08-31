@@ -404,9 +404,10 @@ body:not(.user-is-tabbing) a:focus {
 /* --------------------------------------- */
 
 .header {
-    background: linear-gradient(rgba(0,0,0, .1), rgba(0,0,0, .4)), 
-        url('./images/header.jpg');
-    height: 100vh;
+    background: linear-gradient(rgba(0,0,0, .1), rgba(0,0,0, .4))
+    /* background: linear-gradient(rgba(0,0,0, .1), rgba(0,0,0, .4)), 
+    url('./images/header.jpg'); */
+    height: 0vh;
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -453,7 +454,7 @@ body:not(.user-is-tabbing) a:focus {
 }
 
 .work__box:not(:last-child) {
-    margin-bottom: 25rem;
+    margin-bottom: 10rem;
 }
 
 @media(max-width: 500px) {
@@ -468,7 +469,7 @@ body:not(.user-is-tabbing) a:focus {
 }
 
 .work__text {
-    flex: 0 0 30%;
+    flex: 0 0 60%;
 }
 
 .work__list {
@@ -495,7 +496,7 @@ body:not(.user-is-tabbing) a:focus {
 @media(min-width: 901px) {
     .work__image-box {
         flex: 1;
-        margin: 0 0 0 10rem;
+         margin-left: var(--gutter-huge);
     }
 }
 
@@ -554,7 +555,7 @@ body:not(.user-is-tabbing) a:focus {
 
 @media(min-width: 901px) {
     .about__text {
-        flex: 0 0 35%;
+        flex: 0 0 60%;
     }
     
     .about__photo-container {
@@ -611,3 +612,7 @@ body:not(.user-is-tabbing) a:focus {
         padding: var(--gutter-medium) 0;
     } 
 }
+
+/* --------------------------------------- */
+/* ----- Publication ----- */
+/* --------------------------------------- */
