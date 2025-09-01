@@ -698,10 +698,7 @@ body:not(.user-is-tabbing) a:focus {
   text-decoration: underline;
 }
 
-/* Highlight Tracy's name */
-.me {
-  font-weight: 700;
-}
+
 
 /* Compact header for inner pages */
 .header--compact {
