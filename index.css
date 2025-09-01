@@ -5,8 +5,10 @@
 @font-face {
     font-family: 'Hk Grotesk';
     font-style: normal;
-    font-weight: 400;
-    src: url('./fonts/HKGrotesk-Regular.woff') format('woff');
+    font-weight: 700;
+    src: url('./fonts/HKGrotesk-Bold.woff2') format('woff2'),
+    url('./fonts/HKGrotesk-Bold.woff') format('woff');
+    font-display: swap;
 }
 
 @font-face {
@@ -443,7 +445,7 @@ body:not(.user-is-tabbing) a:focus {
 
 .work__box {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
 }
 
 @media(max-width: 900px) {
@@ -470,6 +472,9 @@ body:not(.user-is-tabbing) a:focus {
 
 .work__text {
     flex: 0 0 60%;
+    display: flex;
+    flex-direction: column;  /* stack title, paragraph, list, links */
+    align-items: flex-start; /* make content align to the left edge */
 }
 
 .work__list {
@@ -490,7 +495,7 @@ body:not(.user-is-tabbing) a:focus {
 }
 
 .work__image-box {
-    margin-bottom: var(--gutter-normal);
+    margin-top: 14rem;
 }
 
 @media(min-width: 901px) {
@@ -504,6 +509,17 @@ body:not(.user-is-tabbing) a:focus {
     .work__code {
         height: 4rem;
     }
+}
+
+.work__links a {
+  margin-right: 0.5rem;    /* space between A-xxx items */
+  color: #fff;             /* white text for dark theme */
+  text-decoration: none;
+}
+
+.work__links a:hover {
+  text-decoration: underline;
+  color: var(--pink);
 }
 
 /* --------------------------------------- */
@@ -616,3 +632,96 @@ body:not(.user-is-tabbing) a:focus {
 /* --------------------------------------- */
 /* ----- Publication ----- */
 /* --------------------------------------- */
+
+/* Section shell (vertical rhythm similar to Work) */
+.publications {
+    display: flex;
+}
+
+/* Card container similar to .work__box */
+.table-box {
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: 1rem;
+  padding: 2rem;
+  margin: 0 0 10rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+}
+
+@media (max-width: 500px) {
+  .table-box {
+    margin-bottom: 20rem; /* match .work__box on mobile */
+  }
+}
+
+/* Wrapper for responsive overflow */
+.pub-table-wrap {
+  width: 100%;
+  overflow-x: auto;
+}
+
+/* Table styling */
+.pub-table {
+  width: 100%;
+  border-collapse: collapse;
+  line-height: 1.6;
+}
+
+.pub-table thead th {
+  text-align: left;
+  border-bottom: 2px solid rgba(0,0,0,.1);
+  padding: 1.25rem 1.25rem;
+  white-space: nowrap;
+  cursor: pointer;     /* sortable */
+  user-select: none;
+  font-weight: 700;
+  color: #fff;
+}
+
+.pub-table thead th[aria-sort="ascending"]::after { content: " ▲"; }
+.pub-table thead th[aria-sort="descending"]::after { content: " ▼"; }
+
+.pub-table tbody td {
+  vertical-align: top;
+  border-bottom: 1px solid rgba(0,0,0,.06);
+  padding: 1.25rem 1.25rem;
+}
+
+/* Zebra striping for readability */
+.pub-table tbody tr:nth-child(even) {
+}
+
+/* Links inside tables */
+.pub-table a {
+  text-decoration: none;
+}
+.pub-table a:hover {
+  text-decoration: underline;
+}
+
+/* Highlight Tracy's name */
+.me {
+  font-weight: 700;
+}
+
+/* Compact header for inner pages */
+.header--compact {
+  min-height: auto;
+  padding: 10px 0;
+  background: transparent;
+  border-bottom: 1px solid rgba(0,0,0,.08);
+}
+
+/* Active nav link highlight */
+.nav__link--active {
+  text-decoration: underline;
+}
+
+
+/* Force your name to be bold + white inside the table */
+.pub-table td .me,
+.pub-table td .me * {
+  font-weight: 700 !important;
+  color: #fff !important;
+}
+
+
