@@ -669,7 +669,7 @@ body:not(.user-is-tabbing) a:focus {
 .pub-table thead th {
   text-align: left;
   border-bottom: 2px solid rgba(0,0,0,.1);
-  padding: 1.25rem 1.25rem;
+  padding: 1.4rem 1.4rem;
   white-space: nowrap;
   cursor: pointer;     /* sortable */
   user-select: none;
